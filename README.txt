@@ -11,3 +11,4 @@ create table first (
 );
 
 insert into first (id, name) values ('test', '테스트');
+test
