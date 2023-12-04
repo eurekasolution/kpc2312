@@ -11,4 +11,7 @@ create table first (
 );
 
 insert into first (id, name) values ('test', '테스트');
-test
+
+다음 사이트에 접속해 코드가 잘 보이는지 확인해 주세요.
+
+https://github.com/eurekasolution/kpc2312
