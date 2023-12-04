@@ -15,3 +15,19 @@ insert into first (id, name) values ('test', '테스트');
 다음 사이트에 접속해 코드가 잘 보이는지 확인해 주세요.
 
 https://github.com/eurekasolution/kpc2312
+
+
+void print(char *ptr)
+{
+	char buf[100];
+	bzero(buf, sizeof(buf));
+	strcpy(buf, ptr);
+}
+// run likes..
+// ./test Hello
+// ./test "hello world"
+int main(int argc, char **argv)
+{
+	print(argv[1]);
+	return 0;
+}
