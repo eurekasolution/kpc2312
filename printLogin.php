@@ -1,4 +1,4 @@
-<form method="post" action="login.php">
+<form method="post" action="main.php?cmd=login">
     <div class="row">
         <div class="col-3 colLine">
             ID

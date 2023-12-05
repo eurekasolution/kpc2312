@@ -1,18 +1,23 @@
 <?php
+/*
     session_save_path("sess");
     session_start();
     
     include "db.php";
 
     $conn = connectDB();
-
+*/
     $id = $_POST["id"];
     $pass = $_POST["pass"];
 
-    if($id== "test" and $pass == "1234")
+    $sql = "select * from users where id='$id' and pass='$pass'";
+    $result = mysqli_query($conn, $sql);
+    $data = mysqli_fetch_array($result);
+
+    if($data)
     {
         $_SESSION["id"] = $id;
-        $_SESSION["name"] = "테스트사용자";
+        $_SESSION["name"] = $data["name"];
         echo "
         <script>
             alert('반갑습니다.');
