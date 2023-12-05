@@ -1,4 +1,24 @@
-<form method="post" action="main.php?cmd=login">
+<script>
+    function checkError()
+    {
+        var old = document.getElementById('id');
+        //alert(old.value);
+        var old2 = document.loginForm.id;
+        var objId = document.querySelector("#id");
+        let idValue = $('#id').val();
+        alert('id value = '  + idValue);
+
+        var regexp = /^[a-zA-Z0-9]{4,10}$/;
+        if(!regexp.test(idValue))
+        {
+            alert('아이디는 영어 대소문자와 숫자로 4~10글자 이내입니다.');
+            objId.focus();
+            return false;
+        }
+    }
+</script>
+
+<form name="loginForm" method="post" action="main.php?cmd=login" onSubmit="return checkError()">
     <div class="row">
         <div class="col-3 colLine">
             ID

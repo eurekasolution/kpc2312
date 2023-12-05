@@ -32,6 +32,12 @@ HTTP의 Response Code
 
 javascript:alert(document.cookie);
 
+SQL injection을 막으려면
+
+	1. 자바스크립트와 login코드 양방향으로 검사
+		a. 회원가입할 때 아이디에 '--', 작은따옴표('), space 를 사용못하게 막아야함.
+		b. 비밀번호 '--', 작은따옴표(') 등은 사용하지 못하도록
+
 --------------------------------------
 
 Day 1(A)

@@ -10,10 +10,16 @@
     $id = $_POST["id"];
     $pass = $_POST["pass"];
 
+    $id = str_replace("--", "", $id);
+    $id = str_replace(" ", "", $id);
+    $id = str_replace("'", "", $id);
+
     $sql = "select * from users where id='$id' and pass='$pass'";
+                                        // abcd' or 2>1 -- 
     $result = mysqli_query($conn, $sql);
     $data = mysqli_fetch_array($result);
 
+    
     if($data)
     {
         $_SESSION["id"] = $id;
