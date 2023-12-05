@@ -37,10 +37,19 @@ SQL injection을 막으려면
 	1. 자바스크립트와 login코드 양방향으로 검사
 		a. 회원가입할 때 아이디에 '--', 작은따옴표('), space 를 사용못하게 막아야함.
 		b. 비밀번호 '--', 작은따옴표(') 등은 사용하지 못하도록
+	2. 자바스크립트는 정규식
+	3. login처리할 때 특수문자, 특히 (--), >, < , = 기호를 무력화시키기
+
+프로그램 다운로드
+
+1. download burp suite (Web Proxy)
 
 --------------------------------------
 
 Day 1(A)
+
+1. download xampp
+2. download visual code
 
 DB: secure
 User: secure

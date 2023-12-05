@@ -28,8 +28,8 @@
     <div class="row">
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-                <span class="material-icons">home</span>
+          <a class="navbar-brand" href="main.php">
+                <span class="material-icons text-white">home</span>
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -41,7 +41,7 @@
                 <a class="nav-link dropdown-toggle" href="main.php" role="button" data-bs-toggle="dropdown"><span class="text-white">NonSecure</span></a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="main.php?cmd=printLogin">Login</a></li>
-                  <li><a class="dropdown-item" href="#">Sql Injection</a></li>
+                  <li><a class="dropdown-item" href="main.php?cmd=fake">Fake Data</a></li>
                   <li><a class="dropdown-item" href="#">Brute Force</a></li>
                 </ul>
               </li>
