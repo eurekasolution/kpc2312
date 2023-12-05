@@ -6,6 +6,9 @@ Day 2(B)
 	main.php
 	style.css
 
+Bootstrap 참고 사이트
+http://w3schools.com/bootstrap5
+
 HTTP의 Response Code
 (참고 구글 검색 : http rfc를 검색후 '404' 찾기)
 
@@ -25,6 +28,9 @@ HTTP의 Response Code
 	https://www.daum.net/
 5xx : Server Error
 6xx : Global Error
+
+
+javascript:alert(document.cookie);
 
 --------------------------------------
 
