@@ -15,8 +15,50 @@
 
     </head>
 <body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col bg-warning">
+            HOME
+        </div>
+    </div>
+</div>
 
 <div class="container">
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Logo</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+              
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><span class="text-white">Dropdown</span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Link</a></li>
+                  <li><a class="dropdown-item" href="#">Another link</a></li>
+                  <li><a class="dropdown-item" href="#">A third link</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Dropdown</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Link</a></li>
+                  <li><a class="dropdown-item" href="#">Another link</a></li>
+                  <li><a class="dropdown-item" href="#">A third link</a></li>
+                </ul>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+
     <div class="row">
         <div class="col">col</div>
         <div class="col">col</div>
@@ -63,6 +105,83 @@
         <div class="col-3 col-sm-2 colLine">비번</div>
         <div class="col colLine">
             <input type="password" class="form-control" placeholder="비번입력" name="pass" id="pass">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3 col-sm-2 colLine">email</div>
+        <div class="col colLine">
+            <input type="email" class="form-control" value="user@test.com" placeholder="email" name="email" id="email">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3 col-sm-2 colLine">지역선택</div>
+        <div class="col colLine">
+            <select name="local" class="form-control">
+                <option value="1">서울</option>
+                <option value="2">경기</option>
+                <option value="3">기타</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3 col-sm-2 colLine">메모</div>
+        <div class="col colLine">
+            <textarea name="memo" class="form-control" rows="10">안녕하세요?
+반갑습니다
+반갑습니다
+            </textarea>
+        </div>
+        <div class="col-2 colLine">
+            <button type="button" class="btn btn-primary h-100 form-control">등록</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3 col-sm-2 colLine">이미지</div>
+        <div class="col-1 colLine">
+            <img src="html.jpeg" class="img-fluid rounded">
+        </div>
+        <div class="col-2 colLine">
+            <img src="html.jpeg" class="img-fluid rounded">
+        </div>
+        <div class="col colLine">
+            <img src="html.jpeg" class="img-fluid rounded">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col colLine">
+            <h3 class="text-primary">
+                <span class="material-icons">settings</span>
+                Button</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col colLine">
+            <button type="button" class="btn btn-primary">버튼1</button>
+        </div>
+        <div class="col colLine">
+            <button type="button" class="btn btn-danger form-control">
+                <span class="material-icons icon">delete</span>버튼2</button>
+        </div>
+        <div class="col colLine">
+            <button type="button" class="btn btn-danger btn-sm form-control">버튼3</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <tr>
+                    <td>제목</td>
+                    <td>작성일</td>
+                    <td>추천수</td>
+                </tr>
+            
+
+            </table>
+
         </div>
     </div>
 
