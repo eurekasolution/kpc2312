@@ -6,7 +6,25 @@ Day 2(B)
 	main.php
 	style.css
 
+HTTP의 Response Code
+(참고 구글 검색 : http rfc를 검색후 '404' 찾기)
 
+1xx : Trying
+2xx : OK
+3xx : Temporary Error, Redirect Error
+4xx : Permanent Error, Client Error
+	400 : Bad Request
+	401 : Unauthorized
+	402 : Payment Required
+	403 : Forbidden
+	404 : Not Found
+	405 : Method Not Allowed
+	...
+
+	enum { BadRequest = 400, Unauthorized, PaymentRequired, Forbidden, NotFound, MethodNotAllowed}
+	https://www.daum.net/
+5xx : Server Error
+6xx : Global Error
 
 --------------------------------------
 
