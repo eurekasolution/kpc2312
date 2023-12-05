@@ -15,7 +15,7 @@
         $_SESSION["name"] = "테스트사용자";
         echo "
         <script>
-            alert('OK');
+            alert('반갑습니다.');
             location.href='main.php';
         </script>
         ";
@@ -23,7 +23,7 @@
     {
         echo "
         <script>
-            alert('Fail');
+            alert('아이디와 비번을 확인하세요.');
             location.href='main.php';
         </script>
         ";
