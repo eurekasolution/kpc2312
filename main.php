@@ -66,6 +66,7 @@
                   <li><a class="dropdown-item" href="main.php?cmd=shell">Web Shell</a></li>
                   <li><a class="dropdown-item" href="main.php?cmd=crawling">Crawling</a></li>
                   <li><a class="dropdown-item" href="main.php?cmd=info">Info</a></li>
+                  <li><a class="dropdown-item" href="main.php?cmd=ftp">FTP</a></li>
                 </ul>
               </li>
 
@@ -102,6 +103,7 @@
     </div>
 </div>
 
+<div class="container">
     <?php
         if(isset($_GET["cmd"]) and $_GET["cmd"])
         {
@@ -112,7 +114,7 @@
             include "init.php";
         }
     ?>
-
+</div>
 </body>
 </html>
 <?php
