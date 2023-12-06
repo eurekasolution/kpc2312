@@ -1,6 +1,23 @@
 Day 3(C)
 
 
+7K
+for()
+{
+	connect();
+	insert();
+	close();
+}
+
+120K
+connect();
+for()
+{
+	insert();	
+}
+close();
+
+
 --------------------------------------------
 Day 2(B) 
 
