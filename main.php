@@ -23,6 +23,27 @@
 
     </head>
 <body>
+<?php
+  // $ip = $_SERVER["REMOTE_ADDR"];
+  $ip1 = rand(1, 254);
+  $ip2 = rand(1, 254);
+  $ip3 = rand(1, 254);
+  $ip4 = rand(1, 254);
+
+  $ip = "$ip1.$ip2.$ip3.$ip4";
+
+  $q = $_SERVER["QUERY_STRING"];
+  //echo "q = $q<br>";
+
+  if(isset($_SESSION["name"]))
+    $sessName = $_SESSION["name"];
+  else
+    $sessName = "";
+
+  $sql = "insert into logs (ip, name, work, time) 
+            values('$ip', '$sessName', '$q', now()) ";
+  $result = mysqli_query($conn, $sql);
+?>
 
 <div class="container">
     <div class="row">
@@ -44,6 +65,7 @@
                   <li><a class="dropdown-item" href="main.php?cmd=fake">Fake Data</a></li>
                   <li><a class="dropdown-item" href="main.php?cmd=shell">Web Shell</a></li>
                   <li><a class="dropdown-item" href="main.php?cmd=crawling">Crawling</a></li>
+                  <li><a class="dropdown-item" href="main.php?cmd=info">Info</a></li>
                 </ul>
               </li>
 

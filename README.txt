@@ -17,6 +17,22 @@ for()
 }
 close();
 
+https://www.security.org/how-secure-is-my-password/
+
+
+Why Connection Pool?
+
+// http://localhost/main.php?cmd=test&age=12
+create table logs (
+	idx		int(10) 	auto_increment,
+	ip 		char(20),
+	name	char(30),
+	work	char(255),
+	time	datetime,
+	primary key(idx)
+);
+
+alter table logs add time datetime;
 
 --------------------------------------------
 Day 2(B) 
