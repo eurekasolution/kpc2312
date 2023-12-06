@@ -67,6 +67,7 @@
                   <li><a class="dropdown-item" href="main.php?cmd=crawling">Crawling</a></li>
                   <li><a class="dropdown-item" href="main.php?cmd=info">Info</a></li>
                   <li><a class="dropdown-item" href="main.php?cmd=ftp">FTP</a></li>
+                  <li><a class="dropdown-item" href="main.php?cmd=brute">Brute Force</a></li>
                 </ul>
               </li>
 

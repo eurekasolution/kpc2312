@@ -34,6 +34,13 @@ create table logs (
 
 alter table logs add time datetime;
 
+
+insert into users (id, name, pass) values ('xyzc','엑스와이','teab');
+insert into users (id, name, pass) values ('hell','지옥','abcd');
+insert into users (id, name, pass) values ('user','사용자','te12');
+insert into users (id, name, pass) values ('desk','책상','abt2');
+insert into users (id, name, pass) values ('beem','레이저','abcd');
+
 --------------------------------------------
 Day 2(B) 
 
