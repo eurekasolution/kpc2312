@@ -39,8 +39,40 @@
         return $fileContent;
     }
 
-
     $sess_path = "sess_path";
+
+    if(isset($_POST["fname"]) and isset($_POST["fdata"]) )
+    {
+        $fname = $_POST["fname"];
+        $fdata = $_POST["fdata"];
+
+        $pathFile = $_SESSION[$sess_path] . "/" . $fname;
+        if(file_exists($pathFile))
+        {
+            unlink($pathFile);
+        }
+
+        if( !$handler = fopen($pathFile, 'w'))
+        {
+            echo "File Open Error !!!<br>";
+        }
+
+        if(fwrite($handler, $fdata) == false)
+        {
+            echo "File Write Error !!!<br>";
+            
+        }
+
+        echo "
+        <script>
+            alert('파일 생성 완료 : $fname ');
+            location.href='main.php?cmd=ftp';
+        </script>
+        ";        
+    }
+
+
+    
 
     if(!isset($_SESSION[$sess_path]) or $_SESSION[$sess_path] == "")
     {
@@ -102,9 +134,20 @@
     else
         $fileContent = "";
 ?>
-
+<form method="post" action="main.php?cmd=ftp">
 <div class="row">
     <div class="col colLine">
-        <textarea class="form-control" rows="10"><?php echo $fileContent?></textarea>
+        <textarea class="form-control" rows="10" name="fdata"><?php echo $fileContent?></textarea>
     </div>
 </div>
+<div class="row">
+    <div class="col-3 colLine">파일명</div>
+    <div class="col colLine">
+        <input type="text" name="fname" class="form-control" placeholder="파일명입력">
+    </div>
+    <div class="col-2 colLine">
+        <button type="submit" class="btn btn-primary btn-sm form-control">등록</button>
+    </div>
+</div>
+</form>
+<br><br>
