@@ -43,6 +43,7 @@
                   <li><a class="dropdown-item" href="main.php?cmd=printLogin">Login</a></li>
                   <li><a class="dropdown-item" href="main.php?cmd=fake">Fake Data</a></li>
                   <li><a class="dropdown-item" href="main.php?cmd=shell">Web Shell</a></li>
+                  <li><a class="dropdown-item" href="main.php?cmd=crawling">Crawling</a></li>
                 </ul>
               </li>
 
