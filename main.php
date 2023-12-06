@@ -42,7 +42,7 @@
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="main.php?cmd=printLogin">Login</a></li>
                   <li><a class="dropdown-item" href="main.php?cmd=fake">Fake Data</a></li>
-                  <li><a class="dropdown-item" href="#">Brute Force</a></li>
+                  <li><a class="dropdown-item" href="main.php?cmd=shell">Web Shell</a></li>
                 </ul>
               </li>
 
