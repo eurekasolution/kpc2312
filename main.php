@@ -69,6 +69,7 @@
                   <li><a class="dropdown-item" href="main.php?cmd=ftp">FTP</a></li>
                   <li><a class="dropdown-item" href="main.php?cmd=brute">Brute Force</a></li>
                   <li><a class="dropdown-item" href="main.php?cmd=brute2">Brute Force2</a></li>
+                  <li><a class="dropdown-item" href="main.php?cmd=chart">Google Chart</a></li>
                 </ul>
               </li>
 
