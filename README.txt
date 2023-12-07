@@ -1,5 +1,27 @@
 Day 4(D)
 
+첫날 만들어 놓은 게시판 스키마
+
+create table bbs (
+	idx	int(10) auto_increment,
+	title	char(255),
+	name char(30),
+	content text,
+	time  datetime,
+	primary key(idx)
+);
+date : yyyy-mm-dd
+datetime : yyyy-mm-dd hh:mm:ss
+alter table bbs add test date;
+alter table bbs change test  xyz datetime;
+alter table bbs drop xyz;
+
+alter table bbs change test time datetime;
+
+
+insert into bbs (title, name, content) 
+		values ('제목1', '작성자1', '내용1');
+
 
 ------------------------------------
 Day 3(C)

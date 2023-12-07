@@ -70,6 +70,7 @@
                   <li><a class="dropdown-item" href="main.php?cmd=brute">Brute Force</a></li>
                   <li><a class="dropdown-item" href="main.php?cmd=brute2">Brute Force2</a></li>
                   <li><a class="dropdown-item" href="main.php?cmd=chart">Google Chart</a></li>
+                  <li><a class="dropdown-item" href="main.php?cmd=bbs">게시판</a></li>
                 </ul>
               </li>
 
