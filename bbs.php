@@ -149,6 +149,19 @@
             ?>
 
             <div class="row">
+                <div class="col-2 colLine">첨부</div>
+                <div class="col colLine">
+                    <?php
+                        if($data["file"])
+                        {
+                            $file = $data["file"];
+                            echo "<a href='upload/$file'>$file</a>";
+                        }
+                    ?>
+                </div>
+            </div>
+
+            <div class="row">
                 <div class="col colLine text-start">
                     <?php
                         if($prevTitle)
@@ -213,14 +226,21 @@
         {
             $fname = $_FILES["upfile"]["name"];
             $size = $_FILES["upfile"]["size"];
+            $tmp = $_FILES["upfile"]["tmp_name"];
 
-            echo "name = $fname , size = $size <br>";
+            echo "name = $fname , size = $size , tmp = $tmp <br>";
+
+            move_uploaded_file($_FILES["upfile"]["tmp_name"], "upload/$fname");
+            chmod("upload/$fname", 0777);
+            $file = $fname;
+        }else
+        {
+            $fname = "";
+            $file = "";
         }
 
-        exit();
-
-        $sql = "insert into bbs (title, name, content, time) values 
-                                ('$title', '$name', '$content', now())";
+        $sql = "insert into bbs (title, name, content, time, file, fname) values 
+                                ('$title', '$name', '$content', now(), '$file', '$fname')";
         $result = mysqli_query($conn, $sql);
 
         if($result)
