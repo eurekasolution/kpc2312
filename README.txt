@@ -31,6 +31,10 @@ insert into bbs (title, name, content)
 >> >> 둘
 >> >> 셋
 >> >> 넷
+
+striptags()
+
+WYSIWYG 게시판 : What You See Is What You Get
 ------------------------------------
 Day 3(C)
 

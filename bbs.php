@@ -21,6 +21,9 @@
         <?php
             while($data)
             {
+                $data["title"] = str_replace("<", "&lt;", $data["title"]);
+                $data["title"] = str_replace(">", "&gt;", $data["title"]);
+                
                 ?>
                 <div class="row">
                     <div class="col-2 colLine"><?php echo $data["idx"] ?></div>
@@ -186,6 +189,18 @@
         $title = $_POST["title"];
         $name = $_POST["name"];
         $content = $_POST["content"];
+
+        $title = str_replace("<", "&lt;", $title);
+        $title = str_replace(">", "&gt;", $title);
+        $title = addslashes($title);  // ' --> \'
+
+        $name = str_replace("<", "&lt;", $name);
+        $name = str_replace(">", "&gt;", $name);
+        $name = addslashes($name);
+
+        $content = str_replace("<", "&lt;", $content);
+        $content = str_replace(">", "&gt;", $content);
+        $content = addslashes($content);
 
         $sql = "insert into bbs (title, name, content, time) values 
                                 ('$title', '$name', '$content', now())";
