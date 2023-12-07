@@ -2,8 +2,13 @@
     session_save_path("sess");
     session_start();
 
-    include "db.php";
+    date_default_timezone_set("Asia/Seoul");
 
+    include "db.php";
+    include "function.php";
+
+    $now = getNow();
+    echo "now = $now<br>";
     $conn = connectDB();
 ?>
 <!doctype html>

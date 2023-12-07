@@ -1,7 +1,15 @@
 <?php
-    $file = $_GET["file"];
+    include "db.php";
+    $conn = connectDB();
 
-    $fname = $file;
+    $idx = $_GET["idx"];
+    $sql = "select * from bbs where idx='$idx' ";
+    $result = mysqli_query($conn, $sql);
+    $data = mysqli_fetch_array($result);
+
+    $file = $data["file"];
+    $fname = $data["fname"];
+
     $file_real = $file;
 
     $file = "upload/$file_real";

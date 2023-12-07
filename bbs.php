@@ -108,8 +108,19 @@
             ?>
 
             <div class="row">
-                <div class="col colLine" style="height:300px; min-height:300px;">
-                    <?php echo $data["content"]?>
+                <div class="col colLine" style="min-height:300px;">
+                    <?php echo $data["content"]?><br>
+
+                    <?php
+                        if($data["file"])
+                        {
+                            $ext = getFileExt($data["file"]);
+                            if(isImageFile($ext))
+                            {
+                                echo "<img src='upload/$data[file]' class='img-fluid rounded'>";
+                            }
+                        }
+                    ?>
                 </div>
             </div>
 
@@ -155,7 +166,8 @@
                         if($data["file"])
                         {
                             $file = $data["file"];
-                            echo "<a href='download.php?file=$file'>$file</a>";
+                            $fname = $data["fname"];
+                            echo "<a href='download.php?idx=$data[idx]'>$fname</a>";
                         }
                     ?>
                 </div>
@@ -224,15 +236,19 @@
 
         if(isset($_FILES["upfile"]) and strlen($_FILES["upfile"]["name"]))
         {
+
             $fname = $_FILES["upfile"]["name"];
             $size = $_FILES["upfile"]["size"];
             $tmp = $_FILES["upfile"]["tmp_name"];
 
+            $ext = getFileExt($fname);
+            $file = "$now.$ext";
+
             echo "name = $fname , size = $size , tmp = $tmp <br>";
 
-            move_uploaded_file($_FILES["upfile"]["tmp_name"], "upload/$fname");
-            chmod("upload/$fname", 0777);
-            $file = $fname;
+            move_uploaded_file($_FILES["upfile"]["tmp_name"], "upload/$file");
+            chmod("upload/$file", 0777);
+            
         }else
         {
             $fname = "";
