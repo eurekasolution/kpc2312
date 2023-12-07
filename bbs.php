@@ -244,6 +244,20 @@
             $ext = getFileExt($fname);
             $file = "$now.$ext";
 
+            if(isAvailFile($ext))
+            {
+
+            }else
+            {
+                echo "
+                <script>
+                    alert('잘못된 파일 업로드입니다.');
+                    location.href='main.php?cmd=bbs';
+                </script>
+                ";
+                exit();
+            }
+
             echo "name = $fname , size = $size , tmp = $tmp <br>";
 
             move_uploaded_file($_FILES["upfile"]["tmp_name"], "upload/$file");

@@ -18,7 +18,27 @@
         $file_info = pathinfo($file);
         return $file_info["extension"];
     }
-
+    function isAvailFile($ext)
+    {
+        $ext = strtolower($ext);
+        switch($ext)
+        {
+            case "jpg":
+            case "jpeg":
+            case "gif":
+            case "png":
+            case "bmp":
+            case "pdf":
+            case "txt":
+                $value = true;
+                break;
+            default:
+                $value = false;
+                break;
+        }
+        
+        return $value;
+    }
     function isImageFile($ext)
     {
         $ext = strtolower($ext);
