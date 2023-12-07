@@ -88,6 +88,72 @@
             </div>
 
             <?php
+                //$data["content"] = nl2br($data["content"]);
+                
+                $data["content"] = str_replace("<", "&lt;", $data["content"]);
+                $data["content"] = str_replace(">", "&gt;", $data["content"]);
+                // cf. space : &nbsp;
+
+                $data["content"] = preg_replace('/\n/', "<br>", $data["content"]);
+            ?>
+
+            <div class="row">
+                <div class="col colLine" style="height:300px; min-height:300px;">
+                    <?php echo $data["content"]?>
+                </div>
+            </div>
+
+            <?php
+                $pnsql = "select * from bbs order by idx desc";
+                $pnresult = mysqli_query($conn, $pnsql);
+                $pn = mysqli_fetch_array($pnresult);
+
+                $prev = "";
+                $next = "";
+                $prevTitle = "";
+                $nextTitle = "";
+                $find = false;
+
+                while($pn)
+                {
+                    if($pn["idx"] == $idx)
+                    {
+                        $find = true;
+                    }else
+                    {
+                        if($find == true)
+                        {
+                            $next = $pn["idx"];
+                            $nextTitle = $pn["title"];
+                            break;
+                        }else
+                        {
+                            $prev = $pn["idx"];
+                            $prevTitle = $pn["title"];
+                        }
+
+                    }
+
+                    $pn = mysqli_fetch_array($pnresult);
+                }
+            ?>
+
+            <div class="row">
+                <div class="col colLine text-start">
+                    <?php echo $prevTitle?>
+                </div>
+                <div class="col colLine text-end">
+                    <?php echo $nextTitle?>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col colLine text-center">
+                    <button type="button" class="btn btn-primary btn-sm" onClick="location.href='main.php?cmd=bbs'">목록</button>
+                </div>
+            </div>
+
+            <?php
         }else
         {
             echo "
