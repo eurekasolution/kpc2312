@@ -140,27 +140,25 @@
 
             <div class="row">
                 <div class="col colLine text-start">
-                    <?php 
+                    <?php
                         if($prevTitle)
                         {
                             echo "이전글 : <a href='main.php?cmd=bbs&mode=show&idx=$prev'>$prevTitle</a>";
                         }else
                         {
-                            echo "<span class='text-secondary'>이전글</span> ";
+                            echo "<span class='text-secondary'>이전글</span>";
                         }
-                                            
                     ?>
                 </div>
                 <div class="col colLine text-end">
-                <?php 
+                <?php
                         if($nextTitle)
                         {
                             echo "다음글 : <a href='main.php?cmd=bbs&mode=show&idx=$next'>$nextTitle</a>";
                         }else
                         {
-                            echo "<span class='text-secondary'>다음글</span> ";
+                            echo "<span class='text-secondary'>다음글</span>";
                         }
-                                            
                     ?>
                 </div>
             </div>
