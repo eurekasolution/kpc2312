@@ -10,6 +10,12 @@ create table bbs (
 	time  datetime,
 	primary key(idx)
 );
+
+alter table bbs add file char(30) default '';
+alter table bbs add fname char(30) default '';
+
+
+
 date : yyyy-mm-dd
 datetime : yyyy-mm-dd hh:mm:ss
 alter table bbs add test date;

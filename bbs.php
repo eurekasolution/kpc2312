@@ -12,9 +12,10 @@
         // 순서, 제목, 작성자, 작성일
         ?>
         <div class="row">
-            <div class="col-2 colLine">순서</div>
+            <div class="col colLine">순서</div>
             <div class="col-6 colLine">제목</div>
-            <div class="col-2 colLine">작성자</div>
+            <div class="col colLine">작성자</div>
+            <div class="col colLine">첨부</div>
             <div class="col-2 colLine">작성일</div>
         </div>
 
@@ -24,13 +25,19 @@
                 $data["title"] = str_replace("<", "&lt;", $data["title"]);
                 $data["title"] = str_replace(">", "&gt;", $data["title"]);
                 
+                if($data["file"])
+                    $printFile = "<span class='material-icons'>download</span>";
+                else
+                    $printFile = "";
+
                 ?>
                 <div class="row">
-                    <div class="col-2 colLine"><?php echo $data["idx"] ?></div>
+                    <div class="col colLine"><?php echo $data["idx"] ?></div>
                     <div class="col-6 colLine">
                         <a href='main.php?cmd=bbs&mode=show&idx=<?php echo $data["idx"] ?>'><?php echo $data["title"] ?></a>
                     </div>
-                    <div class="col-2 colLine"><?php echo $data["name"] ?></div>
+                    <div class="col colLine"><?php echo $data["name"] ?></div>
+                    <div class="col colLine"><?php echo $printFile ?></div>                    
                     <div class="col-2 colLine"><?php echo $data["time"] ?></div>
                 </div>
                 <?php
@@ -202,6 +209,16 @@
         $content = str_replace(">", "&gt;", $content);
         $content = addslashes($content);
 
+        if(isset($_FILES["upfile"]) and strlen($_FILES["upfile"]["name"]))
+        {
+            $fname = $_FILES["upfile"]["name"];
+            $size = $_FILES["upfile"]["size"];
+
+            echo "name = $fname , size = $size <br>";
+        }
+
+        exit();
+
         $sql = "insert into bbs (title, name, content, time) values 
                                 ('$title', '$name', '$content', now())";
         $result = mysqli_query($conn, $sql);
@@ -225,7 +242,7 @@
         // 제목 : 작성자, 내용,
         // 등록, 목록
         ?>
-        <form method="post" action="main.php?cmd=bbs&mode=doWrite">
+        <form method="post" enctype="multipart/form-data" action="main.php?cmd=bbs&mode=doWrite">
         <div class="row">
             <div class="col-2 colLine">제목</div>
             <div class="col colLine">
@@ -243,6 +260,14 @@
                 <textarea name="content" class="form-control" rows="10"></textarea>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-2 colLine">첨부</div>
+            <div class="col colLine">
+                <input type="file" name="upfile" class="form-control">
+            </div>
+        </div>
+
         <div class="row">
             <div class="col colLine text-center">
                 <button type="submit" class="btn btn-primary btn-sm">등록</button> 
