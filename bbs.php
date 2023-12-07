@@ -155,7 +155,7 @@
                         if($data["file"])
                         {
                             $file = $data["file"];
-                            echo "<a href='upload/$file'>$file</a>";
+                            echo "<a href='download.php?file=$file'>$file</a>";
                         }
                     ?>
                 </div>
