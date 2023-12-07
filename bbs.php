@@ -51,5 +51,36 @@
     if($mode == "write")
     {
         echo "글쓰기<br>";
+        // 제목 : 작성자, 내용,
+        // 등록, 목록
+        ?>
+        <form method="post" action="main.php?cmd=bbs&mode=doWrite">
+        <div class="row">
+            <div class="col-2 colLine">제목</div>
+            <div class="col colLine">
+                <input type="text" name="title" class="form-control" placeholder="제목을 입력하세요.">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2 colLine">작성자</div>
+            <div class="col colLine">
+                <input type="text" name="name" class="form-control" placeholder="실명을 입력하세요.">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col colLine">
+                <textarea name="content" class="form-control" rows="10"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col colLine text-center">
+                <button type="submit" class="btn btn-primary btn-sm">등록</button> 
+                <button type="button" class="btn btn-primary btn-sm">목록</button>
+            </div>
+        </div>
+        </form>
+
+
+        <?php
     }
 ?>
