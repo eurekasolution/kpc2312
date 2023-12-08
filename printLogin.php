@@ -1,6 +1,50 @@
 <script>
 
+    function getCookieOld(name)
+    {
+        var search = name + "=";
 
+        if(document.cookie.length >0)
+        {
+            offset = document.cookie.indexOf(search);
+            if(offset != -1)
+            {
+                offset += search.length;
+                end = document.cookie.indexOf(';', offset);
+
+                if(end == -1)
+                {
+                    end = document.cookie.length;
+                }
+
+                var ret = unescape(document.cookie.substring(offset, end));
+
+                return ret;
+            }
+        }
+    }
+
+    function getCookieIfSaveOld()
+    {
+        console.log("save old get...");
+        if(getCookieOld('kpc_id'))
+        {
+            var thisid = getCookieOld('kpc_id');
+            var decrypto = CryptoJS.enc.Base64.parse(thisid);
+
+            //document.querySelector('#kpc_id').value = thisid;
+            document.querySelector('#kpc_id').value = decrypto.toString(CryptoJS.enc.Utf8);
+            document.querySelector('#saveid').checked = true;
+        }
+        if(getCookieOld('kpc_pass'))
+        {
+            var thispass = getCookieOld('kpc_pass');
+            var decrypto = CryptoJS.enc.Base64.parse(thispass);
+            //document.querySelector('#kpc_pass').value = thispass;
+            document.querySelector('#kpc_pass').value = decrypto.toString(CryptoJS.enc.Utf8);
+            document.querySelector('#savepass').checked = true;
+        }
+    }
 
 
     function setCookie(name, value, expiredays)
@@ -9,9 +53,19 @@
 
         var todayDate = new Date();
 
-        todayDate.setDate(todayDate.getDate() + expiredays);
-        document.cookie = name + "=" + value + ";path=/; expires=" + todayDate.toGMTString() + ";";
+        //alert('a');
+        var key = CryptoJS.enc.Utf8.parse(value);
+        //alert('b');
+        let base64 = CryptoJS.enc.Base64.stringify(key);
 
+        //alert('1');
+        todayDate.setDate(todayDate.getDate() + expiredays);
+
+        //alert('2');
+        //document.cookie = name + "=" + value + ";path=/; expires=" + todayDate.toGMTString() + ";";
+        document.cookie = name + "=" + base64 + ";path=/; expires=" + todayDate.toGMTString() + ";";
+        console.log(document.cookie);
+        //alert('tmp');
     }
 
 
@@ -101,3 +155,6 @@
 
 
 </form>
+<script>
+    getCookieIfSaveOld();
+</script>
