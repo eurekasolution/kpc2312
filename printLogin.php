@@ -1,4 +1,15 @@
 <script>
+    function setCookie(name, value, expiredays)
+    {
+        console.log("name = " + name + ", value = " + value + ", ex = " + expiredays);
+
+        var todayDate = new Date();
+        todayDate.setDate(todayDate().getDate() + expiredays);
+        document.cookie = name + "=" + value + ";path=/; expires=" + todayDate.toGMTString() + ";";
+
+    }
+
+
     function checkError()
     {
         var old = document.getElementById('kpc_id');
@@ -17,7 +28,37 @@
         }
 
         // cookie를 이용해서 체크박스가 체크된 경우에 저장하기
+        let kpc_test = document.getElementById('kpc_id').value;
+        let kpc_id = document.querySelector("#kpc_id").value;  // ES5
+        let kpc_pass = $('#kpc_pass').val(); // jQuery
 
+        let saveid = $('#saveid').is(':checked');
+        let savepass = $('savepass').is(':checked');
+
+        console.log("kpc_id = " + kpc_id);
+        console.log("kpc_pass = " + kpc_pass);
+        console.log("saveid = " + saveid);
+        console.log("savepass = " + savepass);
+
+        if(saveid == true)
+        {
+            // 쿠키저장
+            setCookie('kpc_id', kpc_id, 31);
+        }else
+        {
+            setCookie('kpc_id', kpc_id, 0);
+        }
+
+        if(savepass == true)
+        {
+            // 쿠키저장
+            setCookie('kpc_pass', kpc_pass, 31);
+        }else
+        {
+            setCookie('kpc_pass', kpc_pass, 0);
+        }
+
+        return false;
     }
 </script>
 
