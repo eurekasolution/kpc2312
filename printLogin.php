@@ -1,10 +1,15 @@
 <script>
+
+
+
+
     function setCookie(name, value, expiredays)
     {
-        console.log("name = " + name + ", value = " + value + ", ex = " + expiredays);
+        console.log("---------name = " + name + ", value = " + value + ", ex = " + expiredays);
 
         var todayDate = new Date();
-        todayDate.setDate(todayDate().getDate() + expiredays);
+
+        todayDate.setDate(todayDate.getDate() + expiredays);
         document.cookie = name + "=" + value + ";path=/; expires=" + todayDate.toGMTString() + ";";
 
     }
@@ -33,7 +38,7 @@
         let kpc_pass = $('#kpc_pass').val(); // jQuery
 
         let saveid = $('#saveid').is(':checked');
-        let savepass = $('savepass').is(':checked');
+        let savepass = $('#savepass').is(':checked');
 
         console.log("kpc_id = " + kpc_id);
         console.log("kpc_pass = " + kpc_pass);
@@ -49,6 +54,7 @@
             setCookie('kpc_id', kpc_id, 0);
         }
 
+        
         if(savepass == true)
         {
             // 쿠키저장
@@ -58,7 +64,6 @@
             setCookie('kpc_pass', kpc_pass, 0);
         }
 
-        return false;
     }
 </script>
 
