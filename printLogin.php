@@ -1,12 +1,12 @@
 <script>
     function checkError()
     {
-        var old = document.getElementById('id');
+        var old = document.getElementById('kpc_id');
         //alert(old.value);
         var old2 = document.loginForm.id;
-        var objId = document.querySelector("#id");
-        let idValue = $('#id').val();
-        alert('id value = '  + idValue);
+        var objId = document.querySelector("#kpc_id");
+        let idValue = $('#kpc_id').val();
+        //alert('id value = '  + idValue);
 
         var regexp = /^[a-zA-Z0-9]{4,10}$/;
         if(!regexp.test(idValue))
@@ -15,6 +15,9 @@
             objId.focus();
             return false;
         }
+
+        // cookie를 이용해서 체크박스가 체크된 경우에 저장하기
+
     }
 </script>
 
@@ -23,8 +26,12 @@
         <div class="col-3 colLine">
             ID
         </div>
+        <div class="col-1 colLine">
+            <input type="checkbox" name="saveid" id="saveid">
+        </div>
+
         <div class="col colLine">
-            <input type="text" name="id" id="id" class="form-control" placeholder="ID">
+            <input type="text" name="kpc_id" id="kpc_id" class="form-control" placeholder="ID">
         </div>
     </div>
 
@@ -32,8 +39,11 @@
         <div class="col-3 colLine">
             비번
         </div>
+        <div class="col-1 colLine">
+            <input type="checkbox" name="savepass" id="savepass">
+        </div>
         <div class="col colLine">
-            <input type="password" name="pass" id="pass" class="form-control" placeholder="password">
+            <input type="password" name="kpc_pass" id="kpc_pass" class="form-control" placeholder="password">
         </div>
     </div>
 

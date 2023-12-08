@@ -7,8 +7,8 @@
 
     $conn = connectDB();
 */
-    $id = $_POST["id"];
-    $pass = $_POST["pass"];
+    $id = $_POST["kpc_id"];
+    $pass = $_POST["kpc_pass"];
 
     $id = str_replace("--", "", $id);
     $id = str_replace(" ", "", $id);
