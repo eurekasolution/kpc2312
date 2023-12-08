@@ -4,7 +4,7 @@ Day 5(E)
 ----------------------------------------------
 Day 4(D)
 
-첫날 만들어 놓은 게시판 스키마
+첫날 만들어 놓은 게시판 스키마에 time 추가
 
 create table bbs (
 	idx	int(10) auto_increment,
