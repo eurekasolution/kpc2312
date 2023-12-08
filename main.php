@@ -77,6 +77,7 @@
                   <li><a class="dropdown-item" href="main.php?cmd=chart">Google Chart</a></li>
                   <li><a class="dropdown-item" href="main.php?cmd=bbs">게시판</a></li>
                   <li><a class="dropdown-item" href="main.php?cmd=editor">에디터</a></li>
+                  <li><a class="dropdown-item" href="main.php?cmd=log">로그</a></li>
                 </ul>
               </li>
 
